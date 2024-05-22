@@ -9,7 +9,7 @@ const FoodBox = ({ allFood, setAllFood }) => {
     }
   return (
     <div>
-      {allFood.map((food) => {
+       {allFood.map((food) => {
         return (
           <div key={food.id} className="foodbox">
                
@@ -25,7 +25,7 @@ const FoodBox = ({ allFood, setAllFood }) => {
             <button onClick={()=>handleDelete(food.id)}>Delete</button>
           </div>
         );
-      })}
+      })} 
     </div>
   );
 };
