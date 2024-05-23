@@ -1,6 +1,6 @@
 import "../App.css";
 
-const FoodBox = ({ allFood, setAllFood }) => {
+const FoodBox = ({ allFood, setAllFood, searchTerm}) => {
     const handleDelete = (foodId)=>{
         const filteredFood= allFood.filter((food)=>{
             return food.id !== foodId 
@@ -9,7 +9,11 @@ const FoodBox = ({ allFood, setAllFood }) => {
     }
   return (
     <div>
-       {allFood.map((food) => {
+       {allFood
+       .filter((currentFood)=>{
+        return currentFood.name.toLowerCase().includes(searchTerm.toLowerCase())
+       })
+       .map((food) => {
         return (
           <div key={food.id} className="foodbox">
                
